@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客创建说明 - GitHub Pages</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #e8eaed;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        strong {
+            color: #34495e;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ccc;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>个人博客创建说明 - 使用 GitHub Pages</h1>
+
+    <p>你好！这份文档将详细指导你如何使用 <strong>GitHub Pages</strong> 免费搭建一个个人博客。这种方法非常适合已拥有 HTML 文件，并希望能够方便管理和更新内容的用户。</p>
+
+    <p><strong>GitHub Pages</strong> 是一个免费服务，能够直接将你的代码仓库变成一个可访问的网站，管理和更新都非常方便。</p>
+
+    <hr>
+
+    <h2>第一步：准备工作</h2>
+
+    <p>在开始之前，请确保你已经拥有以下工具：</p>
+    <ul>
+        <li>一个 <strong>GitHub 账号</strong>。如果还没有，请先前往 <a href="https://github.com">GitHub 官网</a> 注册一个。</li>
+        <li><strong>Git 软件</strong>。这是将本地文件上传到 GitHub 的必要工具。你可以从 <a href="https://git-scm.com/downloads">Git 官网</a> 下载并安装。</li>
+    </ul>
+
+    <hr>
+
+    <h2>第二步：创建 GitHub 仓库</h2>
+
+    <p>这个仓库将作为你的博客文件存放地，并且它的名称将直接决定你的免费域名。</p>
+
+    <ol>
+        <li>登录你的 GitHub 账号。</li>
+        <li>点击右上角的 "+" 号，然后选择 "New repository"。</li>
+        <li>在 <strong>Repository name</strong> 处，输入一个特殊的名称：<code>你的用户名.github.io</code>。例如，如果你的 GitHub 用户名是 <code>johndoe</code>，那么仓库名就必须是 <code>johndoe.github.io</code>。</li>
+        <li>选择 "Public"，这样你的网站才能被所有人访问。</li>
+        <li>勾选 "Initialize this repository with a README"。</li>
+        <li>点击 "Create repository" 完成创建。</li>
+    </ol>
+    <p>创建成功后，你的博客免费域名就诞生了：<code>https://你的用户名.github.io</code>。</p>
+
+    <hr>
+
+    <h2>第三步：上传你的 HTML 文件</h2>
+
+    <p>现在，我们将把你的本地文件上传到刚刚创建的 GitHub 仓库。</p>
+
+    <ol>
+        <li>
+            <strong>克隆仓库到本地</strong>
+            <p>打开你电脑上的终端（Windows 可用 PowerShell 或 Git Bash），运行以下命令。请将 <code>你的用户名</code> 替换成你自己的。</p>
+            <pre><code>git clone https://github.com/你的用户名/你的用户名.github.io.git</code></pre>
+            <p>这个命令会在你的电脑上创建一个同名文件夹，这就是你博客的本地工作区。</p>
+        </li>
+        <li>
+            <strong>整理并放入你的文件</strong>
+            <p>将你所有的博客文件（HTML 文件、CSS、图片、JavaScript 等）都复制到这个新创建的文件夹中。</p>
+            <ul>
+                <li><strong>首页文件</strong>：你的博客主页文件（通常是 <code>index.html</code>）必须放在这个文件夹的根目录下。</li>
+                <li><strong>目录结构</strong>：为了方便管理，你可以为不同板块和章节创建文件夹。例如：</li>
+                <pre>
+<code>/learning</code> (板块)
+  <code>/chapter1</code> (章节)
+    <code>intro.html</code>
+    <code>lesson1.html</code>
+<code>/portfolio</code> (另一个板块)
+  <code>project1.html</code>
+                </pre>
+            </ul>
+        </li>
+        <li>
+            <strong>提交并推送文件</strong>
+            <p>回到终端，进入你的仓库文件夹，然后依次运行以下命令：</p>
+            <pre><code># 进入你的仓库目录
+cd 你的用户名.github.io
+
+# 添加所有新文件和更改
+git add .
+
+# 记录这次更改并添加描述
+git commit -m "第一次提交博客文件"
+
+# 将更改上传到 GitHub
+git push origin main</code></pre>
+        </li>
+    </ol>
+    <p><strong>注意：</strong> 如果你的仓库默认分支是 <code>master</code>，请将最后一条命令的 <code>main</code> 改为 <code>master</code>。</p>
+
+    <hr>
+
+    <h2>第四步：验证和访问</h2>
+
+    <p>完成上述步骤后，等待几分钟，你的博客就会自动部署上线。</p>
+    <p>在浏览器中输入 <code>https://你的用户名.github.io</code>，你就可以看到你上传的网站了。恭喜你，你的个人博客已经成功创建！</p>
+
+    <hr>
+
+    <h2>关于目录和导航</h2>
+
+    <p>为了实现“选择板块”和“浏览章节”的功能，你需要在你的 HTML 文件中手动构建导航系统。以下是一些示例代码，你可以参考并修改。</p>
+
+    <h3>主页文件 (<code>index.html</code>) 示例</h3>
+    <p>在你的主页中，你可以用链接指向不同的板块文件夹。</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;我的个人博客&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;欢迎来到我的博客！&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;/learning/&quot;&gt;学习笔记&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;/portfolio/&quot;&gt;我的作品集&lt;/a&gt;&lt;/li&gt;
+            &lt;!-- 你可以根据需要添加更多板块 --&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h3>板块列表文件 (例如 <code>learning/index.html</code>) 示例</h3>
+    <p>在每个板块的文件夹中，创建一个 <code>index.html</code> 文件来列出所有的章节。</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;学习笔记&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;学习笔记&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;a href=&quot;/&quot;&gt;返回主页&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;/learning/chapter1/intro.html&quot;&gt;第一章：入门介绍&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/learning/chapter1/lesson1.html&quot;&gt;第一课：基础知识&lt;/a&gt;&lt;/li&gt;
+        &lt;!-- 根据你的章节内容添加更多链接 --&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <p>通过这种方式，你可以用最简单、最灵活的方式管理你的博客内容。每次更新，只需重复 <code>git add</code>、<code>git commit</code> 和 <code>git push</code> 这三个命令即可。</p>
+
+    <hr>
+
+    <p>希望这份详细的说明能帮助你顺利创建自己的个人博客。祝你创作愉快！</p>
+
+</body>
+</html>

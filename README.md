@@ -1,2 +1,2 @@
-# PPYoungGS.github.io
-personal blog
+# BrianYoung.github.io
+html, self
